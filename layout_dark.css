@@ -1,0 +1,88 @@
+body {
+  background-color: #191919;
+}
+
+.bg-image {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  z-index: -25;
+  background: #191919 url(images/hero-glow.svg) repeat-y 50% 80%;
+}
+
+#project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 0px;
+}
+
+.project-heading {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-heading h3 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/*--------flex--------*/
+.flex-root {
+  display: flex;
+  margin: 20px;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.flex-root .margin {
+  flex: 1 1 100px;
+}
+
+.flex-main {
+  display: flex;
+  margin: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-word {
+  font-size: 1.2rem;
+  flex: 1 1 auto;
+  padding: 20px;
+  width: 520px;
+  color: aliceblue;
+  font-weight: 200;
+}
+
+@media (max-width: 1400px) {
+  .flex-word {
+    flex: 0.9 1 auto;
+    width: 400px;
+  }
+}
+
+.flex-video {
+  flex: 0 1 auto;
+  padding: 20px;
+}
+
+/*----------------*/
+.grid {
+  display: grid;
+  grid-template-columns: 400px max(600px, auto) auto;
+  grid-template-rows: 70px minmax(160px, auto) auto;
+  grid-template-areas:
+    'header header'
+    'leftbar main'
+    'footer footer';
+  column-gap: 20px;
+  row-gap: 20px;
+}
