@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Projectile Toolkit - Unity Asset</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Everything you need to solve problems related to projectile motion in Unity. Flexible, elegant, and easy to use.">
+  <meta name="author" content="Ge Ge">
+  <meta name="copyright" content="© 2022 Blobcreate & Ge Ge">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="/layout.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Manrope:wght@800&display=swap" rel="stylesheet">
+
+  <!-- Global site tag (gtag.js) - Google Ads: 10953353139 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10953353139"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-10953353139');
+  </script>
+
+  <!-- Event snippet for View UAS page conversion page
+  In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-10953353139/gHNOCMmar9ADELPP--Yo',
+        'transaction_id': '',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
+
+</head>
+<body>
+  <!-- section 1 -->
+  <div class="bg-image wave"></div>
+
+  <section id="project">
+
+      <div class="flex-main">
+
+        <div class="flex-word">
+          <h2 style="font-size: 2.4em;">Projectile Toolkit</h2>
+          <p>Projectile Toolkit is all you need to solve problems related to <span class="bold">projectile motion</span> in Unity.</p>
+          <p>Flexible, elegant, and easy to use.</p>
+
+          <div class="button-group">
+            <div style="max-width: 280px; width: 100%; position: relative;">
+              <img src="images/reviews.svg" title="Projectile Toolkit has five-star reviews and is recommended by Code Monkey" style="-webkit-user-drag: none;">
+              <a class="question-mark" style="bottom: 22%; left: 88%; font-size: 0.01vw">?</a>
+              <div class="monkey">Code Monkey is a well-known Unity youtuber. Projectile Toolkit got featured in his video <strong><em>TOP 10 NEW Systems and Tools AUGUST 2022!</em></strong> on YouTube.</div>
+            </div>
+
+            <a href="https://assetstore.unity.com/packages/slug/216129" onclick="gtag_report_conversion()" class="main-button" style="max-width: 290px; width: 100%; height: auto; margin: 20px 0;">
+              <img src="images/UAS.svg" title="Get Projectile Toolkit on the Unity Asset Store" style="max-width: 290px;">
+            </a>
+
+<!--             <a href="https://blobcreate.itch.io/demos-for-projectile-toolkit" target="_blank"
+            class="button lightred desktop-only">
+              🎮 Play HTML Demos
+            </a> -->
+
+<!--             <a href="https://blobcreate.github.io/projectile-toolkit/docs" target="_blank"
+            class="button gray">
+              📃 View Docs
+            </a> -->
+
+<!--             <a href="https://blobcreate.github.io/projectile-toolkit/docs" target="_blank"
+            class="button blue">
+              💬 Join our Discord!
+            </a> -->
+
+          </div>
+
+        </div>
+
+<!--         <div class="flex-video">
+          <video controls loop muted preload="metadata" class="video-box">
+            <source src="videos/bobcat.mp4" type="video/mp4"/>
+          </video>
+        </div> -->
+<!--         <div class="button-group">
+        <div class="scroll-container">
+          <div class="scroll-page" id="vid_1">
+            <video controls loop muted preload="metadata" class="video-box" onloadedmetadata="setHeight()">
+              <source src="videos/bobcat.mp4" type="video/mp4"/>
+            </video>
+          </div>
+          <div class="scroll-page" id="vid_2">
+            <video controls loop muted preload="metadata" class="video-box">
+              <source src="videos/bobcat.mp4" type="video/mp4"/>
+            </video>
+          </div>
+          <div class="scroll-page" id="vid_3">
+            <video controls loop muted preload="metadata" class="video-box">
+              <source src="videos/bobcat.mp4" type="video/mp4"/>
+            </video>
+          </div>
+        </div> -->
+
+<!--         <nav>
+          <a href="#vid_1">1</a>
+          <a href="#vid_2">2</a>
+          <a href="#vid_3">3</a>
+        </nav> -->
+        </div>
+
+      </div>
+
+  </section>
+
+</body>
+</html>
+
+<style type="text/css">
+
+.bold {
+  font-weight: bold;
+}
+
+a {
+  display: inline-block;
+  width: 50px;
+  text-decoration: none;
+}
+
+nav, .scroll-container {
+  display: block;
+  padding: 0 50px 0 50px;
+  margin: 0 -30px 0 -30px;
+  text-align: center;
+}
+
+.scroll-container {
+  max-width: 500px;
+  height: 50vh;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+.scroll-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 5em;
+}
+
+.wave {
+  background-image: url("images/blob-scene-haikei green 3l.svg");
+  opacity: 1;
+  background-size: cover;
+  background-position: right;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0 0 10px 0;
+}
+
+.button {
+  position: relative;
+  color: white;
+  font-weight: 600;
+  margin: 12px 12px 4px 0px;
+  padding: 8px;
+  border-radius: 4px;
+  width: fit-content;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.question-mark {
+  position: absolute;
+  width: 20px;
+  padding: 3px;
+  background-color: #99eb97;
+  border-radius: 30px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  user-select: none;
+}
+.line-mark {
+/*  bottom: 18%;
+  left: 29%;
+  font-size: 1vw;*/
+  position: absolute;
+  width: 114px;
+  padding: 10px 2px;
+  border: hsl(0deg 0% 54% / 35%) 3px;
+  border-style: none none dashed none;
+  color: blue;
+  text-align: center;
+}
+
+.main-button {
+  filter: drop-shadow(0px 8px 10px hsl(213deg 100% 40% / 0.3));
+}
+
+.monkey {
+  visibility: hidden;
+  position: absolute;
+  background-color: darkgray;
+  bottom: 40%;
+  left: calc(50% - 30px);
+  width: 100%;
+  height: auto;
+  /*box-shadow: 0px 3px 10px 0px hsl(115deg 50% 44% / 39%);*/
+  box-shadow: 0px 3px 10px 0px hsl(215deg 26% 29% / 40%);
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: white;
+  opacity: 0;
+  transition: 0.2s;
+}
+@media (max-width: 500px) {
+  .monkey {
+    left: 0;
+  }
+}
+
+.question-mark:hover + .monkey {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.2s;
+}
+
+
+.lightred {
+  background-color: lightsalmon;;
+}
+.lightred:hover {
+  box-shadow: 0px 8px 10px -4px hsl(17deg 100% 40% / 0.3);
+  transition: 0.3s;
+}
+
+.green {
+  background-color: yellowgreen;
+}
+.green:hover {
+  box-shadow: 0px 8px 10px -4px hsl(213deg 100% 40% / 0.3);
+  transition: 0.3s;
+}
+
+.lightblue {
+  color: darkslategray;
+  background-color: #e3f0ff;
+}
+
+.gray {
+  background-color: #5d6778;
+}
+
+.blue {
+  background-color: hsl(210deg 100% 60%);
+}
+
+.gray:hover, .lightblue:hover, .blue:hover {
+  box-shadow: 0px 8px 10px -4px hsl(213deg 100% 40% / 0.3);
+  transition: 0.3s;
+}
+
+
+.button.desktop-only:after {
+  position: absolute;
+  content: "Desktop Only";
+  top: -10px;
+  right: -10px;
+  font-size: 10px;
+  color: white;
+  background: darkslategray;
+  border-radius: 4px;
+  padding: 3px;
+  /*font-weight: 400;*/
+}
+
+.flex-word {
+  width: auto;
+  max-width: 600px;
+  color: hsl(180deg 25% 20%);
+  font-family: var(--font-int), sans-serif;
+}
+
+.video-box {
+  max-width: min(700px, 100%);
+  max-height: 400px;
+  -webkit-box-shadow: 0px 25px 50px -20px #4682b4c4;
+  box-shadow: 0px 25px 50px -20px #4682b4c4;
+}
+
+/*.v-line {
+  width: 8px;
+  margin: 0 12px 0 0px;
+  min-height: 120px;
+  max-height: 120px;
+  background-color: dodgerblue;
+  position: absolute; z-index: -1; top: 0; left: 50%; bottom: 0;
+}
+
+#second.v-line {
+  margin: 0 0px 0 12px;
+}*/
+
+</style>
+
+<script type="text/javascript">
+
+let vid = document.querySelector(".video-box");
+
+function setHeight() {
+  let vidContainer = document.querySelector(".scroll-container");
+  console.log(vid.offsetHeight);
+  vidContainer.style.height = vid.offsetHeight + 150 + "px";
+}
+
+</script>
