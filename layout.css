@@ -1,6 +1,5 @@
 :root {
   --dark-shadow: #00000033;
-  --bg-color: #FFFFFF00;
   --font-pop: 'Poppins';
   --font-urb: 'Urbanist';
   --font-int: 'Inter';
@@ -12,10 +11,6 @@ html {
   height: 100%;
 }
 
-body {
-  background-color: var(--bg-color);
-}
-
 .bg-image {
   position: fixed;
   top: 0;
@@ -24,10 +19,8 @@ body {
   height: 100%;
   min-height: 100%;
   z-index: -100;
-  /*background: var(--bg-color) url(images/blob-glow.svg) repeat-y 50% 80%;*/
 
-  background-color: var(--bg-color);
-  opacity: 0.2;
+  opacity: 0.1;
   background-image: radial-gradient(blue 1px, transparent 1.5px);
   background-size: 23px 23px;
 }
@@ -52,7 +45,6 @@ body {
   font-weight: 800;
   margin: 0 40px;
   /*color: #222222;*/
-  background-color: var(--bg-color);
 }
 
 /*--------flex--------*/
@@ -81,7 +73,6 @@ body {
   padding: 20px;
   width: 520px;
   font-weight: 300;
-  background-color: var(--bg-color);
 }
 
 .flex-word h2 {
