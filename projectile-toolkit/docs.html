@@ -6,6 +6,7 @@
 <link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
 .mac-os-11 { --title-bar-height:28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
 body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
@@ -22,8 +23,6 @@ body.typora-export { padding-left: 30px; padding-right: 30px; }
 @media screen and (max-width: 500px) {
   body.typora-export { padding-left: 0px; padding-right: 0px; }
   #write { padding-left: 20px; padding-right: 20px; }
-  .CodeMirror-sizer { margin-left: 0px !important; }
-  .CodeMirror-gutters { display: none !important; }
 }
 #write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
@@ -51,7 +50,7 @@ sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inh
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
 figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
 figure > table { margin: 0px; }
-tr { break-inside: avoid; break-after: auto; }
+thead, tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 32px; }
@@ -73,6 +72,7 @@ div.hr:focus { cursor: none; }
 #write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
 .md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
 .CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
 .footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
 .footnotes + .footnotes { margin-top: 0px; }
 .md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
@@ -87,12 +87,14 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
 #write .footnote-line { white-space: pre-wrap; }
 @media print {
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
-  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
   .typora-export * { -webkit-print-color-adjust: exact; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
   .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
   .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
 }
 .footnote-line { margin-top: 0.714em; font-size: 0.7em; }
 a img, img a { cursor: pointer; }
@@ -130,6 +132,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 }
 a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
 .footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
 .md-attr { display: none; }
 .md-fn-count::after { content: "."; }
 code, pre, samp, tt { font-family: var(--monospace); }
@@ -168,7 +171,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 @media screen and (max-width: 800px) {
   .typora-export-sidebar { display: none; }
 }
-.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
 .outline-content ul { margin-top: 0px; margin-bottom: 0px; }
 .outline-content strong { font-weight: 400; }
 .outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
@@ -199,6 +202,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
 .typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
 .md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
 
 
 :root {
@@ -457,11 +461,8 @@ code {
     html {
         font-size: 13px;
     }
-    table,
     pre {
         page-break-inside: avoid;
-    }
-    pre {
         word-wrap: break-word;
     }
 }
@@ -593,6 +594,6 @@ header, .context-menu, .megamenu-content, footer{
 </style><title>Docs</title>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><h2 id='projectile-toolkit-documentation'><span>Projectile Toolkit documentation</span></h2><p>&nbsp;</p><p><a href='https://blobcreate.github.io/projectile-toolkit/docs/Manual.html'><span>Manual</span></a></p><p><a href='https://blobcreate.github.io/projectile-toolkit/docs/Scripting Reference.html#scripting-reference'><span>Scripting Reference</span></a></p><p>&nbsp;</p><hr /><h3 id='future-updates-devlogs'><span>Future updates devlogs</span></h3><h6 id='september-3-2022'><span>September 3, 2022</span></h6><p><span>Two news:</span></p><ul><li><p><span>Version 1.1 coming this week! (Edit: released)</span></p></li><li><p><span>Now you can check out some future features of Projectile Toolkit (work in progress):</span></p><ol start='' ><li><span>PEB Trajectory Predictor: a high-performance, physics-scene-simulated trajectory prediction component.</span></li><li><span>Propulsion Library/Engine (Drone Example).</span></li></ol><p><span>The demos are under &quot;WIP&quot; section of the WebGL demo linked in the Unity Asset Store page.</span></p></li></ul><p>&nbsp;</p><h6 id='july-17-2022'><span>July 17, 2022</span></h6><p><span>I&#39;m working on Version 1.1:</span></p><p><span>In this version, I&#39;ve added two new algorithms and improved several things:</span></p><ul><li><code>TimeOfFlight(...)</code><span>, which calculates the flight duration of a projectile to hit the target,</span></li><li><code>ElevationalReach(...)</code><span>, which calculates the maximum range a projectile can reach at a specified launch speed to a specified elevation,</span></li><li><span>Character Movement Kit: new Forward Vector parameter added, now you can define the character&#39;s forward direction. New Rotation Speed parameter added, helps you fine tune the rotation animation of your characters.</span></li><li><span>The targeting algorithms now get a &quot;/0&quot; check improvement: when start point and end point have the same x and z values, this will cause an error, and now they won&#39;t.</span></li></ul><p>&nbsp;</p><h6 id='july-9-2022'><span>July 9, 2022</span></h6><p><span>I am working hard to bring new features and utilities to Projectile Toolkit. In addition to the new functionalities for targeting and trajectory prediction, one important area I am working on is the propulsion library.</span></p><p><span>I&#39;ve realized that there&#39;re much more things I can do than just bring you some simple functions that convert between force and velocity, and after some &quot;chaotic&quot; iterations, I successfully implemented the first advanced method of propulsion library.</span></p><p><span>After that, I was like &quot;why not make a simple drone with the method to test it out? It will behave weird, but it will be very fun&quot;. But the result blows my mind, it is PERFECT! I used four propulsion engines, and use </span><code>AddForceAtPosition(..., ForceMode.Force)</code><span> to add continuous propulsion to the drone body, and everything just works in harmony, and works like a charm!</span></p><p><span>See the video showing the result </span><a href='https://blobcreate.github.io/projectile-toolkit/videos/propulsion drone.webm'><strong><span>here</span></strong></a><span>.</span></p></div></div>
+<div id='write'  class=''><h2 id='projectile-toolkit-documentation'><span>Projectile Toolkit documentation</span></h2><p>&nbsp;</p><p><a href='https://blobcreate.github.io/projectile-toolkit/docs/Manual.html'><span>Manual</span></a></p><p><a href='https://blobcreate.github.io/projectile-toolkit/docs/Scripting Reference.html#scripting-reference'><span>Scripting Reference</span></a></p><p><a href='https://blobcreate.github.io/projectile-toolkit/docs/PEB Trajectory Predictor.html'><span>PEB Trajectory Predictor</span></a></p><p>&nbsp;</p><hr /><h3 id='devlogs'><span>Devlogs</span></h3><h6 id='april-15-2023'><span>April 15, 2023</span></h6><p><span>Projectile Toolkit 2.0 is available! Introducing PEB Trajectory Predictor, a brand new component that invokes physics engine to simulate future frames and thus gives accurate prediction.</span></p><p>&nbsp;</p><h6 id='september-3-2022'><span>September 3, 2022</span></h6><ul><li><p><span>Version 1.1 coming this week! (Edit: released)</span></p></li><li><p><span>Now you can check out some future features of Projectile Toolkit (work in progress):</span></p><ol start='' ><li><p><span>PEB Trajectory Predictor: a high-performance, physics-scene-simulated trajectory prediction component.</span></p></li><li><p><span>Propulsion Library/Engine (Drone Example).</span></p></li></ol><p><span>The demos are under &quot;WIP&quot; section of the WebGL demo linked in the Unity Asset Store page.</span></p></li></ul><p>&nbsp;</p><h6 id='july-17-2022'><span>July 17, 2022</span></h6><p><span>I&#39;m working on Version 1.1:</span></p><p><span>In this version, I&#39;ve added two new algorithms and improved several things:</span></p><ul><li><p><code>TimeOfFlight(...)</code><span>, which calculates the flight duration of a projectile to hit the target,</span></p></li><li><p><code>ElevationalReach(...)</code><span>, which calculates the maximum range a projectile can reach at a specified launch speed to a specified elevation,</span></p></li><li><p><span>Character Movement Kit: new Forward Vector parameter added, now you can define the character&#39;s forward direction. New Rotation Speed parameter added, helps you fine tune the rotation animation of your characters.</span></p></li><li><p><span>The targeting algorithms now get a &quot;/0&quot; check improvement: when start point and end point have the same x and z values, this will cause an error, and now they won&#39;t.</span></p></li></ul><p>&nbsp;</p><h6 id='july-9-2022'><span>July 9, 2022</span></h6><p><span>I am working hard to bring new features and utilities to Projectile Toolkit. In addition to the new functionalities for targeting and trajectory prediction, one important area I am working on is the propulsion library.</span></p><p><span>I&#39;ve realized that there&#39;re much more things I can do than just bring you some simple functions that convert between force and velocity, and after some &quot;chaotic&quot; iterations, I successfully implemented the first advanced method of propulsion library.</span></p><p><span>After that, I was like &quot;why not make a simple drone with the method to test it out? It will behave weird, but it will be very fun&quot;. But the result blows my mind, it is PERFECT! I used four propulsion engines, and use </span><code>AddForceAtPosition(..., ForceMode.Force)</code><span> to add continuous propulsion to the drone body, and everything just works in harmony, and works like a charm!</span></p><p><span>See the video showing the result </span><a href='https://blobcreate.github.io/projectile-toolkit/videos/propulsion drone.webm'><strong><span>here</span></strong></a><span>.</span></p></div></div>
 </body>
 </html>
