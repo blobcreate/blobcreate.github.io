@@ -2,12 +2,6 @@
   font-weight: bold;
 }
 
-a {
-  display: inline-block;
-  width: 50px;
-  text-decoration: none;
-}
-
 nav, .scroll-container {
   display: block;
   padding: 0 50px 0 50px;
@@ -57,6 +51,7 @@ nav, .scroll-container {
 }
 
 .question-mark {
+  display: inline-block;
   width: 20px;
   height: auto;
   padding: 3px;
