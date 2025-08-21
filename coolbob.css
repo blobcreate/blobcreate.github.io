@@ -78,6 +78,9 @@ nav, .scroll-container {
 .main-button {
   filter: drop-shadow(0px 8px 10px hsl(213deg 100% 40% / 0.3));
   transition: 0.3s;
+  will-change: transform;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .main-button:hover {
