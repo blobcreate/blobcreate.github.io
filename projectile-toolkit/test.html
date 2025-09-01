@@ -16,19 +16,79 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Manrope:wght@800&display=swap" rel="stylesheet">
 
   <script>
-  window.acceptrics = {};
-  localStorage.setItem("__acceptrics_conf", JSON.stringify({"bannerText":"We use cookies and similar technologies on our website to enhance your experience and personalize content and ads.","gcmAdvanced":true,"backgroundColor":"#f0f0f0","geoArea":"eea","accountNum":"cbfqoipp","useTranslation":false,"bannerStyle":"left","ec":true})); document.addEventListener("__acceptrics_loaded", () =>{window.acceptrics.initializeSettings();});
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'granted',
+    'ad_user_data': 'granted',
+    'ad_personalization': 'granted',
+    'analytics_storage': 'granted'
+  });
   </script>
-  <script src="https://cdn.acceptrics.com?n=cbfqoipp"></script>
-  <style>
-    #acceptricsCookieBanner.left {
-        width: 24%;
-        color: darkslategray;
+
+  <script>
+    const europeanCountries = [
+      "AL","AD","AM","AT","BY","BE","BA","BG","HR","CY","CZ","DK","EE","FI","FR","GE","DE",
+      "GR","HU","IS","IE","IT","XK","LV","LI","LT","LU","MT","MD","MC","ME","NL","MK","NO",
+      "PL","PT","RO","RU","SM","RS","SK","SI","ES","SE","CH","TR","UA","UK","VA"
+    ];
+    function insertHtmlWithScripts(html, target = document.body) {
+      const tpl = document.createElement("template");
+      tpl.innerHTML = html;
+
+      tpl.content.childNodes.forEach(node => {
+        if (node.tagName === "SCRIPT") {
+          const newScript = document.createElement("script");
+
+          if (node.src) {
+            newScript.src = node.src;
+          } else {
+            newScript.textContent = node.textContent;
+          }
+
+          for (let attr of node.attributes) {
+            newScript.setAttribute(attr.name, attr.value);
+          }
+
+          target.appendChild(newScript);
+        } else {
+          target.appendChild(node.cloneNode(true));
+        }
+      });
     }
-  </style>
+    fetch('https://ipapi.co/json/')
+    .then(function(response) {
+      response.json().then(jsonData => {
+        const cc = jsonData.country;
+        if (europeanCountries.includes(cc)) {
+          fetch("/cc-module.html")
+            .then(res => res.text())
+            .then(mod => {
+              if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", ()=>{
+                  insertHtmlWithScripts(mod);
+                });
+              } else {
+                insertHtmlWithScripts(mod);
+              }
+            });
+        } else {
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+          });
+        }
+      });
+    })
+    .catch(function(error) {
+      console.log(error)
+    });
+  </script>
+
   <!-- Global site tag (gtag.js) - Google Ads: 10953353139 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10953353139"></script>
-
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -41,9 +101,10 @@
   In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
   <script>
   function gtag_report_conversion(url) {
+    window.open(url, '_blank', 'noopener');
     var callback = function () {
       if (typeof(url) != 'undefined') {
-        window.location = url;
+        // window.location = url;
       }
     };
     gtag('event', 'conversion', {
@@ -56,8 +117,9 @@
 
 </head>
 <body>
-  <!-- section 1 -->
+  <script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.2.0/cookie-consent.js" charset="UTF-8"></script>
 
+  <!-- section 1 -->
   <section id="project">
 
       <div class="flex-main">
@@ -67,7 +129,7 @@
           <p>Want to see it in action? Head over to the details page now:</p>
           <div class="button-group">
 
-            <a href="https://assetstore.unity.com/packages/slug/216129" onclick="return gtag_report_conversion('https://assetstore.unity.com/packages/slug/216129')" class="main-button" style="max-width: 320px; width: 100%; height: auto; margin: 20px 0;">
+            <a href="https://assetstore.unity.com/packages/slug/216129" onclick="return gtag_report_conversion('https://assetstore.unity.com/packages/slug/216129');" class="main-button" style="max-width: 320px; width: 100%; height: auto; margin: 20px 0;">
               <img src="../images/uas-button-26.svg" alt="Learn more about Projectile Toolkit on the Unity Asset Store">
             </a>
 

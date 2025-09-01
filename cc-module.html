@@ -1,0 +1,36 @@
+<!-- Cookie Consent by TermsFeed https://www.TermsFeed.com -->
+<script type="text/javascript" charset="UTF-8">
+cookieconsent.run({"notice_banner_type":"simple","consent_type":"implied","palette":"light","language":"en","page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_name":"Blobcreate Official Website",
+  "callbacks": {
+    "scripts_specific_loaded": (level) => {
+      switch(level) {
+        case 'targeting':
+          gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted'
+          });
+          break;
+        case 'tracking':
+          gtag('consent', 'update', {
+            'analytics_storage': 'granted'
+          });
+      }
+    }
+  },
+  "callbacks_force": true
+});
+</script>
+<!-- End Cookie Consent by TermsFeed https://www.TermsFeed.com -->
+<style type="text/css">
+  .termsfeed-com---nb-simple {
+    right: auto;
+    top: auto;
+    bottom: 20px;
+    left: 20px;
+    position: fixed;
+  }
+  .termsfeed-com---nb .cc-nb-main-container {
+    padding: 2rem;
+  }
+</style>

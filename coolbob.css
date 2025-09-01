@@ -54,9 +54,10 @@ nav, .scroll-container {
   display: inline-block;
   width: 20px;
   height: auto;
-  padding: 3px;
-  background-color: #99eb97;
-  border-radius: 30px;
+  font-weight: bold;
+  /*background-color: #99eb97;*/
+  background-color: dodgerblue;
+  border-radius: 6px;
   text-align: center;
   color: white;
   user-select: none;
@@ -101,7 +102,7 @@ nav, .scroll-container {
   padding: 8px;
   border-radius: 6px;
   font-size: 1rem;
-  line-height: calc(1.5rem);
+  line-height: 1.5;
   color: white;
   opacity: 0;
   transition: 0.2s;
@@ -112,7 +113,8 @@ nav, .scroll-container {
   }
 }
 
-.question-mark:hover + .monkey {
+.question-mark:hover + .monkey,
+.question-mark:focus + .monkey {
   visibility: visible;
   opacity: 1;
   transition: 0.2s;
