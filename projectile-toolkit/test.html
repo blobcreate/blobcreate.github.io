@@ -32,7 +32,7 @@
       "GR","HU","IS","IE","IT","XK","LV","LI","LT","LU","MT","MD","MC","ME","NL","MK","NO",
       "PL","PT","RO","RU","SM","RS","SK","SI","ES","SE","CH","TR","UA","UK","VA"
     ];
-    fetch('http://ip-api.com/json/?fields=status,country,countryCode,query')
+    fetch('https://ipapi.co/json/')
     .then(function(response) {
       response.json().then(jsonData => {
         const cc = jsonData.countryCode;
