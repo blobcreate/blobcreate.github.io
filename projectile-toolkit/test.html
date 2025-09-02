@@ -32,6 +32,12 @@
       "GR","HU","IS","IE","IT","XK","LV","LI","LT","LU","MT","MD","MC","ME","NL","MK","NO",
       "PL","PT","RO","RU","SM","RS","SK","SI","ES","SE","CH","TR","UA","UK","VA"
     ];
+    function execute(mod) {
+      const tpl = document.createElement("template");
+      tpl.innerHTML = mod;
+      const clone = tpl.content.cloneNode(true);
+      document.body.appendChild(clone);
+    }
     fetch('https://ipapi.co/json/')
     .then(function(response) {
       response.json().then(jsonData => {
@@ -43,10 +49,10 @@
             .then(mod => {
               if (document.readyState === "loading") {
                 document.addEventListener("DOMContentLoaded", ()=>{
-                  document.getElementById("cc").innerHTML = mod;
+                  execute(mod);
                 });
               } else {
-                document.getElementById("cc").innerHTML = mod;
+                execute(mod);
               }
             });
         } else {
