@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Projectile Toolkit - Unity Asset</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Everything you need to solve problems related to projectile motion in Unity. Flexible, elegant, and easy to use.">
+  <meta name="author" content="Ge Ge">
+  <meta name="copyright" content="© 2025 Blobcreate & Ge Ge">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../layout.css">
+  <link rel="stylesheet" href="../coolbob.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Manrope:wght@800&display=swap" rel="stylesheet">
+
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  </script>
+
+  <script>
+    const europeanCountries = [
+      "AL","AD","AM","AT","BY","BE","BA","BG","HR","CY","CZ","DK","EE","FI","FR","GE","DE",
+      "GR","HU","IS","IE","IT","XK","LV","LI","LT","LU","MT","MD","MC","ME","NL","MK","NO",
+      "PL","PT","RO","RU","SM","RS","SK","SI","ES","SE","CH","TR","UA","UK","VA"
+    ];
+    fetch('http://ip-api.com/json/?fields=status,country,countryCode,query')
+    .then(function(response) {
+      response.json().then(jsonData => {
+        const cc = jsonData.countryCode;
+        if (europeanCountries.includes(cc)) {
+          fetch("../cc-module.html")
+            .then(res => res.text())
+            .then(html => {
+              const tpl = document.getElementById("cc-module");
+              const clone = tpl.content.cloneNode(true);
+              document.body.appendChild(clone);
+            });
+        }
+      });
+    })
+    .catch(function(error) {
+      console.log(error)
+    });
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Ads: 10953353139 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10953353139"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-10953353139');
+  </script>
+
+  <!-- Event snippet for View UAS page conversion page
+  In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-10953353139/gHNOCMmar9ADELPP--Yo',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
+
+</head>
+<body>
+  <!-- section 1 -->
+
+  <section id="project">
+
+      <div class="flex-main">
+
+        <div class="flex-word" style="font-size: 1.5rem; line-height: 1.44; font-weight: 400;">
+          <p><span style="font-size: 2rem; font-weight: bold;">Projectile Toolkit</span> accelerates your game development process, solves everything related to <b style="font-weight: bold; color: blue;">projectile motion, targeting, and trajectory prediction</b>. And the cutting-edge propulsion features are under active development.</p>
+          <p>Want to try it in action? Head over to the details page now.</p>
+          <div class="button-group">
+
+            <a href="https://assetstore.unity.com/packages/slug/216129" onclick="return gtag_report_conversion('https://assetstore.unity.com/packages/slug/216129')" class="main-button" style="max-width: 320px; width: 100%; height: auto; margin: 20px 0;">
+              <img src="../images/uas-button-26.svg" alt="Learn more about Projectile Toolkit on the Unity Asset Store">
+            </a>
+
+            <div style="position: fixed; bottom: 10px; font-size: 1.1rem; margin: 0 40px 0 40px; align-self: center;">Projectile Toolkit - Crafted by Blobcreate - Recommended by Code Monkey <a class="question-mark" style="font-size: 1rem;">?</a>
+              <div class="monkey">Code Monkey is a well-known Unity youtuber. Projectile Toolkit got featured in his video <strong><em>TOP 10 NEW Systems and Tools AUGUST 2022!</em></strong> on YouTube.</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+  </section>
+
+</body>
+</html>
