@@ -18,6 +18,12 @@
   <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
   </script>
 
   <script>
@@ -30,14 +36,8 @@
     .then(function(response) {
       response.json().then(jsonData => {
         const cc = jsonData.country;
-        console.log(cc);
         if (europeanCountries.includes(cc)) {
-          gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied'
-          });
+          console.log(cc);
           fetch("../cc-module.html")
             .then(res => res.text())
             .then(mod => {
