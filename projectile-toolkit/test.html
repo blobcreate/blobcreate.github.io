@@ -35,7 +35,8 @@
     fetch('https://ipapi.co/json/')
     .then(function(response) {
       response.json().then(jsonData => {
-        const cc = jsonData.countryCode;
+        const cc = jsonData.country;
+        console.log(cc);
         if (europeanCountries.includes(cc)) {
           fetch("../cc-module.html")
             .then(res => res.text())
