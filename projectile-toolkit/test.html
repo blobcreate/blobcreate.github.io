@@ -43,7 +43,6 @@
       response.json().then(jsonData => {
         const cc = jsonData.country;
         if (europeanCountries.includes(cc)) {
-          console.log(cc);
           fetch("../cc-module.html")
             .then(res => res.text())
             .then(mod => {
