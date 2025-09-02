@@ -18,12 +18,6 @@
   <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied'
-  });
   </script>
 
   <script>
@@ -38,13 +32,30 @@
         const cc = jsonData.country;
         console.log(cc);
         if (europeanCountries.includes(cc)) {
+          gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+          });
           fetch("../cc-module.html")
             .then(res => res.text())
-            .then(html => {
-              const tpl = document.getElementById("cc-module");
-              const clone = tpl.content.cloneNode(true);
-              document.body.appendChild(clone);
+            .then(mod => {
+              if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", ()=>{
+                  document.getElementById("cc").innerHTML = mod;
+                });
+              } else {
+                document.getElementById("cc").innerHTML = mod;
+              }
             });
+        } else {
+          gtag('consent', 'default', {
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted',
+            'analytics_storage': 'granted'
+          });
         }
       });
     })
@@ -83,7 +94,7 @@
 </head>
 <body>
   <!-- section 1 -->
-
+  <div id="cc"></div>
   <section id="project">
 
       <div class="flex-main">
