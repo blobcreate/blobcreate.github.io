@@ -19,10 +19,10 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied'
+    'ad_storage': 'granted',
+    'ad_user_data': 'granted',
+    'ad_personalization': 'granted',
+    'analytics_storage': 'granted'
   });
   </script>
 
@@ -32,30 +32,48 @@
       "GR","HU","IS","IE","IT","XK","LV","LI","LT","LU","MT","MD","MC","ME","NL","MK","NO",
       "PL","PT","RO","RU","SM","RS","SK","SI","ES","SE","CH","TR","UA","UK","VA"
     ];
-    function execute(mod) {
+    function insertHtmlWithScripts(html, target = document.body) {
       const tpl = document.createElement("template");
-      tpl.innerHTML = mod;
-      const clone = tpl.content.cloneNode(true);
-      document.body.appendChild(clone);
+      tpl.innerHTML = html;
+
+      tpl.content.childNodes.forEach(node => {
+        if (node.tagName === "SCRIPT") {
+          const newScript = document.createElement("script");
+
+          if (node.src) {
+            newScript.src = node.src;
+          } else {
+            newScript.textContent = node.textContent;
+          }
+
+          for (let attr of node.attributes) {
+            newScript.setAttribute(attr.name, attr.value);
+          }
+
+          target.appendChild(newScript);
+        } else {
+          target.appendChild(node.cloneNode(true));
+        }
+      });
     }
     fetch('https://ipapi.co/json/')
     .then(function(response) {
       response.json().then(jsonData => {
         const cc = jsonData.country;
         if (europeanCountries.includes(cc)) {
-          fetch("../cc-module.html")
+          fetch("/cc-module.html")
             .then(res => res.text())
             .then(mod => {
               if (document.readyState === "loading") {
                 document.addEventListener("DOMContentLoaded", ()=>{
-                  execute(mod);
+                  insertHtmlWithScripts(mod);
                 });
               } else {
-                execute(mod);
+                insertHtmlWithScripts(mod);
               }
             });
         } else {
-          gtag('consent', 'default', {
+          gtag('consent', 'update', {
             'ad_storage': 'granted',
             'ad_user_data': 'granted',
             'ad_personalization': 'granted',
