@@ -113,7 +113,8 @@ nav, .scroll-container {
   }
 }
 
-.question-mark:hover + .monkey {
+.question-mark:hover + .monkey,
+.question-mark:focus + .monkey {
   visibility: visible;
   opacity: 1;
   transition: 0.2s;
