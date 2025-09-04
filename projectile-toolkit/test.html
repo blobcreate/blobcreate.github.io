@@ -68,7 +68,7 @@
             .then(res => res.text())
             .then(mod => {
               if (document.readyState === "loading") {
-                document.addEventListener("DOMContentLoaded", ()=>{
+                document.addEventListener("DOMContentLoaded", () => {
                   insertHtmlWithScripts(mod);
                 });
               } else {
