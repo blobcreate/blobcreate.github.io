@@ -41,6 +41,7 @@
         const cc = jsonData.country;
         if (EEA_COUNTRIES.includes(cc)) {
         } else {
+          console.log("not in eea");
           gtag('consent', 'update', {
             'ad_storage': 'granted',
             'ad_user_data': 'granted',
