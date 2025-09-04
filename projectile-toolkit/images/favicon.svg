@@ -1,0 +1,110 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <defs>
+    <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+    </pattern>
+    <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="url(#smallGrid)"/>
+      <path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/>
+    </pattern>
+    
+    <!-- Glow Effect -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <!-- Gradient for trajectory -->
+    <linearGradient id="trajectoryGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d1b2" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00d1b2" stop-opacity="0.2"/>
+    </linearGradient>
+    
+    <!-- Gradient for projectile -->
+    <radialGradient id="projectileGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00d1b2" stop-opacity="0.8"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Grid Background -->
+  <rect width="800" height="600" fill="url(#grid)" />
+  
+  <!-- Coordinate System -->
+  <line x1="100" y1="500" x2="700" y2="500" stroke="rgba(255, 255, 255, 0.3)" stroke-width="2"/>
+  <line x1="100" y1="100" x2="100" y2="500" stroke="rgba(255, 255, 255, 0.3)" stroke-width="2"/>
+  
+  <!-- Trajectory Paths -->
+  <!-- Main Trajectory -->
+  <path d="M 100,500 Q 250,200 700,500" fill="none" stroke="url(#trajectoryGradient)" stroke-width="4" stroke-dasharray="10,5" filter="url(#glow)"/>
+  
+  <!-- Alternative Trajectories (fainter) -->
+  <path d="M 100,500 Q 300,150 700,500" fill="none" stroke="rgba(0, 209, 178, 0.3)" stroke-width="2" stroke-dasharray="5,5"/>
+  <path d="M 100,500 Q 200,250 700,500" fill="none" stroke="rgba(0, 209, 178, 0.3)" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Projectile -->
+  <circle cx="100" cy="500" r="15" fill="url(#projectileGradient)" filter="url(#glow)">
+    <animateMotion path="M 0,0 Q 150,-300 600,0" dur="3s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Target -->
+  <circle cx="700" cy="500" r="20" fill="none" stroke="#ff3860" stroke-width="3">
+    <animate attributeName="r" values="20;25;20" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="700" cy="500" r="10" fill="#ff3860">
+    <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Launcher -->
+  <rect x="70" y="470" width="60" height="30" rx="5" fill="#363636" stroke="#00d1b2" stroke-width="2"/>
+  <rect x="90" y="440" width="20" height="30" rx="2" fill="#363636" stroke="#00d1b2" stroke-width="2" transform="rotate(-30 90 440)"/>
+  
+  <!-- Angle Indicator -->
+  <path d="M 100,500 L 150,500 A 50,50 0 0,0 125,456" fill="none" stroke="rgba(255, 255, 255, 0.5)" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="140" y="480" fill="#00d1b2" font-family="monospace" font-size="12">45°</text>
+  
+  <!-- Velocity Vector -->
+  <line x1="100" y1="500" x2="150" y2="450" stroke="#ffdd57" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="150,450 145,455 155,455" fill="#ffdd57" transform="rotate(-45 150 450)"/>
+  <text x="130" y="440" fill="#ffdd57" font-family="monospace" font-size="12">v₀</text>
+  
+  <!-- Gravity Indicator -->
+  <line x1="400" y1="350" x2="400" y2="400" stroke="#ff3860" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="400,400 395,390 405,390" fill="#ff3860"/>
+  <text x="410" y="380" fill="#ff3860" font-family="monospace" font-size="12">g</text>
+  
+  <!-- Distance Indicator -->
+  <line x1="100" y1="520" x2="700" y2="520" stroke="rgba(255, 255, 255, 0.5)" stroke-width="1" stroke-dasharray="5,5"/>
+  <polygon points="100,520 110,515 110,525" fill="rgba(255, 255, 255, 0.5)"/>
+  <polygon points="700,520 690,515 690,525" fill="rgba(255, 255, 255, 0.5)"/>
+  <text x="390" y="540" fill="rgba(255, 255, 255, 0.7)" font-family="monospace" font-size="14" text-anchor="middle">Distance</text>
+  
+  <!-- Height Indicator -->
+  <line x1="80" y1="500" x2="80" y2="300" stroke="rgba(255, 255, 255, 0.5)" stroke-width="1" stroke-dasharray="5,5"/>
+  <polygon points="80,500 75,490 85,490" fill="rgba(255, 255, 255, 0.5)"/>
+  <polygon points="80,300 75,310 85,310" fill="rgba(255, 255, 255, 0.5)"/>
+  <text x="60" y="400" fill="rgba(255, 255, 255, 0.7)" font-family="monospace" font-size="14" text-anchor="middle" transform="rotate(-90 60 400)">Height</text>
+  
+  <!-- Time Indicators -->
+  <circle cx="250" cy="350" r="5" fill="#00d1b2">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <text x="260" y="350" fill="rgba(255, 255, 255, 0.7)" font-family="monospace" font-size="12">t₁</text>
+  
+  <circle cx="400" cy="300" r="5" fill="#00d1b2">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <text x="410" y="300" fill="rgba(255, 255, 255, 0.7)" font-family="monospace" font-size="12">t₂</text>
+  
+  <circle cx="550" cy="350" r="5" fill="#00d1b2">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <text x="560" y="350" fill="rgba(255, 255, 255, 0.7)" font-family="monospace" font-size="12">t₃</text>
+  
+  <!-- Formula Overlay -->
+  <rect x="550" y="100" width="200" height="120" rx="10" fill="rgba(0, 0, 0, 0.7)" stroke="#00d1b2" stroke-width="1"/>
+  <text x="570" y="130" fill="#ffffff" font-family="monospace" font-size="14">x = v₀·cos(θ)·t</text>
+  <text x="570" y="160" fill="#ffffff" font-family="monospace" font-size="14">y = v₀·sin(θ)·t - ½gt²</text>
+  <text x="570" y="190" fill="#ffffff" font-family="monospace" font-size="14">Range = v₀²·sin(2θ)/g</text>
+</svg>
