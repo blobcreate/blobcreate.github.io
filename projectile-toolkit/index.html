@@ -56,7 +56,7 @@
   window.acceptrics = {};
   localStorage.setItem("__acceptrics_conf", JSON.stringify({"bannerText":"We use cookies and similar technologies on our website to enhance your experience and personalize content and ads.",/*"gcmAdvanced":true,*/"backgroundColor":"#f0f0f0","geoArea":"eea","accountNum":"cbfqoipp","useTranslation":false,"bannerStyle":"left","ec":true})); document.addEventListener("__acceptrics_loaded", () =>{window.acceptrics.initializeSettings();});
   </script>
-  <script src="https://cdn.acceptrics.com?n=cbfqoipp" defer></script>
+  <script src="https://cdn.acceptrics.com?n=cbfqoipp" async></script>
   <style>
     #acceptricsCookieBanner.left {
         width: 24%;
@@ -70,7 +70,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'AW-10953353139');
   </script>
 
@@ -78,9 +77,10 @@
   In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
   <script>
   function gtag_report_conversion(url) {
+    window.open(url, '_blank', 'noopener');
     var callback = function () {
       if (typeof(url) != 'undefined') {
-        window.location = url;
+        // window.location = url;
       }
     };
     gtag('event', 'conversion', {
@@ -104,7 +104,7 @@
           <p>Want to see it in action? Head over to the details page now:</p>
           <div class="button-group">
 
-            <a href="https://assetstore.unity.com/packages/slug/216129" onclick="return gtag_report_conversion('https://assetstore.unity.com/packages/slug/216129')" class="main-button" style="max-width: 320px; width: 100%; height: auto; margin: 20px 0;">
+            <a href="https://assetstore.unity.com/packages/slug/216129" onclick="return gtag_report_conversion('https://assetstore.unity.com/packages/slug/216129');" class="main-button" style="max-width: 320px; width: 100%; height: auto; margin: 20px 0;">
               <img src="../images/uas-button-26.svg" alt="Learn more about Projectile Toolkit on the Unity Asset Store">
             </a>
 
