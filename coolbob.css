@@ -173,7 +173,7 @@ nav, .scroll-container {
   width: auto;
   max-width: 600px;
   color: hsl(180deg 25% 20%);
-  font-family: sans-serif;
+  font-family: var(--font-int); sans-serif;
   font-size: 1.3rem;
 }
 
