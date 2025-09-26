@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<link rel="stylesheet" href="./doc-styles/back-button-and-theme-selector.css">
+<link rel="stylesheet" href="/doc-styles/back-button-and-theme-selector.css">
 
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 
@@ -43,7 +43,7 @@ function getCookie(name) {
 }
 
 function applyTheme(themePath) {
-    themePath = './doc-styles/' + themePath + '.css';
+    themePath = '/doc-styles/' + themePath + '.css';
     let themeLink = document.querySelector('link[data-theme]');
     if (!themeLink) {
         themeLink = document.createElement('link');
@@ -52,7 +52,7 @@ function applyTheme(themePath) {
         document.head.appendChild(themeLink);
     }
     themeLink.href = themePath;
-    if (themePath === './doc-styles/mint-dark.css') {
+    if (themePath === '/doc-styles/mint-dark.css') {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
         link.type = 'text/css';
