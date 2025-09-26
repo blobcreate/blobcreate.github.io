@@ -1,0 +1,36 @@
+.back-to-root {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    margin-left: 6px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+}
+.back-to-root:hover {
+    background-color: #45a049;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    text-decoration: none;
+}
+
+.theme-selector {
+    appearance: none;
+    font-size: 14px;
+    border-radius: 8px;
+    padding: 4px 11px;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    background-color: transparent;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.theme-selector:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
