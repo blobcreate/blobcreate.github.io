@@ -1,0 +1,54 @@
+@import url('./dimmed.css');
+
+:root {
+  --text-color: #c8d1d9;
+  --bg-color: #0d1117;
+  --side-bar-bg-color: #0d1117;
+  --control-text-color: #a9aaab;
+  --primary-color: #f9826c;
+  --primary-btn-border-color: #f9826c;
+  --active-file-text-color: inherit;
+  --active-file-border-color: #f9826c;
+  --active-file-bg-color: #0d1117;
+  --primary-btn-text-color: #f9826c;
+  --window-border: 0 solid #0d1117;
+  --item-hover-bg-color: #161b22;
+  --item-hover-text-color: #f9826c;
+  --meta-content-color: #f9826c;
+  --search-select-text-color: #f9826c;
+  --control-text-color: var(--text-color);
+  --control-text-hover-color: var(--text-color);
+  --heading-char-color: #f9826c;
+  --active-toggle-btn-color: #192133;
+  --blur-text-color: rgba(200, 200, 200, 0.33);
+  --rawblock-edit-panel-bd: var(--item-hover-bg-color) !important;
+  --select-text-bg-color: rgba(53, 82, 116, 0.97) !important;
+  --select-text-font-color: #fff !important;
+  --color-border-secondary: #21262d !important;
+  --mermaid-node-color: #b87f62 !important;
+  --mermaid-node-border: #bd7958;
+  --mermaid-contrast-color: #afe61d;
+  --mermaid-theme: dark;
+  --monospace: ui-monospace,
+    Menlo, Monaco,
+    "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono",
+    "Oxygen Mono",
+    "Ubuntu Monospace",
+    "Source Code Pro",
+    "Fira Mono",
+    "Droid Sans Mono",
+    "Courier New", monospace;
+}
+
+code {
+  background-color: #343941 !important;
+}
+
+blockquote {
+  border-left: .25rem solid #3b434b !important;
+}
+
+blockquote p {
+  color: #8b949e !important;
+}
