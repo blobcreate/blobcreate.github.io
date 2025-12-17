@@ -81,10 +81,10 @@
   In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
   <script>
   function gtag_report_conversion(url) {
-    window.open(url, '_blank', 'noopener');
+    // window.open(url, '_blank', 'noopener');
     var callback = function () {
       if (typeof(url) != 'undefined') {
-        // window.location = url;
+        window.location = url;
       }
     };
     gtag('event', 'conversion', {
@@ -105,12 +105,12 @@
 
         <div class="flex-word" style="font-size: 1.5rem; line-height: 1.44; font-weight: 400;">
           <!-- <h2>Projectile Toolkit</h2> -->
-          <p><span style="font-size: 2rem; font-weight: 800;">Projectile Toolkit</span> is all you need to solve problems related to projectile motion — <b style="font-weight: bold; color: blue;">targeting, trajectory prediction, and aerodynamics <span style="color: black;">made EASY</span></b>. And the cutting-edge propulsion toolkit is under active development.</p>
-          <p>Want to know more? Head over to the details page now:</p>
+          <p><span style="font-size: 2rem; font-weight: 800;">Projectile Toolkit</span> is all you need to solve problems related to projectile motion — <b style="font-weight: bold; color: blue;">targeting, trajectory prediction, and aerodynamics <span style="color: black;">made EASY</span></b>.<!--  And the cutting-edge propulsion toolkit is under active development. --></p>
+          <p>Projectile Toolkit is included in Unity's official new year sale. <span style="font-weight: 800;">Save 50% — grab it now!</span></p>
           <div class="button-group">
 
             <a href="https://assetstore.unity.com/packages/slug/216129" onclick="return gtag_report_conversion('https://assetstore.unity.com/packages/slug/216129');" class="main-button" style="max-width: 320px; width: 100%; height: auto; margin: 20px 0;">
-              <img src="../images/uas-button-26.svg" alt="Learn more about Projectile Toolkit on the Unity Asset Store">
+              <img src="../images/uas-button-sale.svg" alt="Learn more about Projectile Toolkit on the Unity Asset Store">
             </a>
 
             <div style="position: fixed; bottom: 15px; font-size: 1.1rem; margin: 0 40px 0 40px; align-self: center;">Projectile Toolkit - Crafted by Blobcreate - Recommended by Code Monkey <a class="question-mark" style="font-size: 1rem;">?</a>
