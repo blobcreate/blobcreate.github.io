@@ -171,7 +171,7 @@ nav, .scroll-container {
 
 .flex-word {
   width: auto;
-  max-width: 600px;
+  max-width: 710px;
   color: hsl(180deg 25% 20%);
   font-family: var(--font-int); sans-serif;
   font-size: 1.3rem;
