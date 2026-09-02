@@ -310,7 +310,7 @@ span.cm-strikethrough { text-decoration: line-through; }
 	--code-block-bg-color: #0F111A;
 }
 
-@include-when-export url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;700&family=Source+Code+Pro&display=swap');
+@include-when-export url(https://fonts.googleapis.com/css2?family=Lexend:300,700&family=Source+Code+Pro&display=swap);
 
 /*serif*/
 /*monospace*/
@@ -760,8 +760,6 @@ hr {
 
 
 @import "";
-
-@include-when-export url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;700&family=Source+Code+Pro&display=swap');
 
 :root {
   

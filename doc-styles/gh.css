@@ -77,7 +77,8 @@ li div { padding-top: 0px; }
 blockquote { margin: 1rem 0px; }
 li .mathjax-block, li p { margin: 0.5rem 0px; }
 li blockquote { margin: 1rem 0px; }
-li { margin: 0px; position: relative; line-height: 2; }
+li { margin: 0px; position: relative; }
+.outline-item-wrapper { line-height: 1.8; }
 blockquote > :last-child { margin-bottom: 0px; }
 blockquote > :first-child, li > :first-child { margin-top: 0px; }
 .footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
@@ -314,7 +315,7 @@ span.cm-strikethrough { text-decoration: line-through; }
 }
 
 body {
-    font-family: system-ui, "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', 'SF Pro', sans-serif;
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', 'SF Pro', sans-serif;
     color: rgb(51, 51, 51);
     line-height: 1.6;
 }
